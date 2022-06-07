@@ -8,11 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: mkdir -p $(pwd)/path/to/artifact
+    - run: mkdir -p ~/path/to/artifact
 
-    - run: echo hello > $(pwd)/path/to/artifact/world.txt
+    - run: echo hello > ~/path/to/artifact/world.txt
 
     - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
-        path: $(pwd)/path/to/artifact/world.txt
+        name: my-artifact-2
+        path: ~/path/to/artifact/world.txt
