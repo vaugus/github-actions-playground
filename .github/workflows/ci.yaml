@@ -11,8 +11,10 @@ jobs:
     - run: mkdir -p ~/path/to/artifact
 
     - run: echo hello > ~/path/to/artifact/world.txt
+    
+    - run: cd ~/path/to/artifact/ && tar -czf test.tar.gz * 
 
     - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact-2
-        path: ~/path/to/artifact/world.txt
+        name: tar-artifact
+        path: ~/path/to/artifact/test.tar.gz 
