@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: find ~/path/to/artifact -type f -name "test.tar.gz"
+    - run: find ~/ -type f -name "test.tar.gz"
 
     - run: mkdir -p ~/path/to/artifact
 
