@@ -6,12 +6,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
     
-    - run: find ~/ -type f -name "world.txt"
+    - name: Check file existence 
+      run: find ~/ -type f -name "world.txt"
 
-    - run: mkdir -p ~/path/to/artifact
-
-    - run: echo hello > ~/path/to/artifact/world.txt
+    - name: Make folder
+      run: mkdir -p ~/path/to/artifact
+      
+    - name: Make artifact
+      run: echo hello > ~/path/to/artifact/world.txt
     
-    - run: find ~/ -type f -name "world.txt"
+    - name: Find file again
+      run: find ~/ -type f -name "world.txt"
