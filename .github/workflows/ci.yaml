@@ -14,7 +14,7 @@ jobs:
         git clone https://github.com/vaugusto92/hello-world.git
         cd hello-world
         git branch
-        git ls-remote --heads https://github.com/vaugusto92/hello-world.git inexistent | wc -l
+        git ls-remote --heads https://github.com/vaugusto92/hello-world.git TESTE | wc -l
 
     - name: Make folder
       run: mkdir -p ~/path/to/artifact
