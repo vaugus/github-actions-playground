@@ -10,7 +10,9 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Check file existence 
-      run: find ~/ -type f -name "world.txt"
+      run: |
+        git config --global --list
+        git clone https://github.com/vaugusto92/hello-world.git
 
     - name: Make folder
       run: mkdir -p ~/path/to/artifact
