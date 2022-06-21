@@ -10,11 +10,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Check file existence 
-      run: |
-        git clone https://github.com/vaugusto92/hello-world.git
-        cd hello-world
-        git branch
-        git ls-remote --heads https://github.com/vaugusto92/hello-world.git TESTE | wc -l
+      run: git ls-remote --heads https://github.com/vaugusto92/hello-world.git TESTE | wc -l
 
     - name: Make folder
       run: mkdir -p ~/path/to/artifact
