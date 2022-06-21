@@ -12,6 +12,8 @@ jobs:
     - name: Check file existence 
       run: |
         git clone https://github.com/vaugusto92/hello-world.git
+        cd hello-world
+        ls -lrt
 
     - name: Make folder
       run: mkdir -p ~/path/to/artifact
