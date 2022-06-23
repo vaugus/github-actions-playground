@@ -15,6 +15,9 @@ jobs:
     - name: Make folder
       run: mkdir -p ~/path/to/artifact
       
+    - name: Secret example
+      run: echo ${{ secrets.TEST }}
+      
     - name: Make artifact
       run: echo hello > ~/path/to/artifact/world.txt
     
