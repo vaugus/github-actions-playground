@@ -2,13 +2,19 @@ name: CI
 
 on: push
 
+env:
+  FOO: bar
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    
+      
+    - name: env test
+      run: echo $FOO
+        
     - name: Check file existence 
       run: git ls-remote --heads https://github.com/vaugusto92/hello-world.git TESTE | wc -l
 
@@ -19,7 +25,7 @@ jobs:
       run: echo ${{ secrets.TEST }}
       
     - name: Make artifact
-      run: echo hello > ~/path/to/artifact/world.txt
+      run: echo hello > ~/path/to/artifact/$FOO
     
     - name: Find file again
-      run: find ~/ -type f -name "world.txt"
+      run: find ~/ -type f -name "$FOO"
