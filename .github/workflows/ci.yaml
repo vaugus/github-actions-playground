@@ -6,6 +6,24 @@ env:
   FOO: bar
 
 jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: env test
+      run: echo $FOO
+  
+  build-bar:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: env test
+      run: echo $FOO
+
   build:
     runs-on: ubuntu-latest
     steps:
