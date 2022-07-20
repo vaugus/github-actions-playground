@@ -12,6 +12,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       
+    - name: cmake test
+      run: which cmake
+      
   bar:
     runs-on: ubuntu-latest
     steps:
