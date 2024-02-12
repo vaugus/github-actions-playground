@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: test
-      run: which pwsh
+      run: sudo lsof -i -P -n | grep 22
       
   # bar:
   #   runs-on: ubuntu-latest
