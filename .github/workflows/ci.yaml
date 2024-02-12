@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: test
-      run: sudo lsof -i -P -n | grep 22
+      run: cat ~/.ssh/config
       
   # bar:
   #   runs-on: ubuntu-latest
