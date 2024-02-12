@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: test
-      run: cat ~/.ssh/config
+      run: ls -lah ~/.ssh/
       
   # bar:
   #   runs-on: ubuntu-latest
