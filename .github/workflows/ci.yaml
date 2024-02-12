@@ -9,51 +9,48 @@ jobs:
   foo:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    - name: test
+      run: which pwsh
       
-    - name: cmake test
-      run: which cmake
-      
-  bar:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin' # See 'Supported distributions' for available options
-        java-version: '17'
-    - run: java --version
+  # bar:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - uses: actions/setup-java@v3
+  #     with:
+  #       distribution: 'temurin' # See 'Supported distributions' for available options
+  #       java-version: '17'
+  #   - run: java --version
 
-  build-bar:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+  # build-bar:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
       
-    - name: env test
-      run: echo $FOO
+  #   - name: env test
+  #     run: echo $FOO
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
       
-    - name: env test
-      run: echo $FOO
+  #   - name: env test
+  #     run: echo $FOO
         
-    - name: Check file existence 
-      run: git ls-remote --heads https://github.com/vaugusto92/opencv-builds.git 4.6.0 | wc -l
+  #   - name: Check file existence 
+  #     run: git ls-remote --heads https://github.com/vaugusto92/opencv-builds.git 4.6.0 | wc -l
 
-    - name: Make folder
-      run: mkdir -p ~/path/to/artifact
+  #   - name: Make folder
+  #     run: mkdir -p ~/path/to/artifact
       
-    - name: Secret example
-      run: echo ${{ secrets.TEST }}
+  #   - name: Secret example
+  #     run: echo ${{ secrets.TEST }}
       
-    - name: Make artifact
-      run: echo hello > ~/path/to/artifact/$FOO
+  #   - name: Make artifact
+  #     run: echo hello > ~/path/to/artifact/$FOO
     
-    - name: Find file again
-      run: find ~/ -type f -name "$FOO"
+  #   - name: Find file again
+  #     run: find ~/ -type f -name "$FOO"
